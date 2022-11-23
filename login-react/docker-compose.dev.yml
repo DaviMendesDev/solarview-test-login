@@ -1,0 +1,19 @@
+version: "^3.9"
+
+services:
+  react:
+    image: node:latest
+    container_name: solarview-login-react
+    working_dir: /home/node/app
+    build:
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "8085:3000"
+    networks:
+      - solarview_login_default_network
+
+networks:
+  solarview_login_default_network:
+    name: solarview_login_default_network
