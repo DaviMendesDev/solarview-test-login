@@ -9,4 +9,4 @@ mkdir -p /var/www/html/storage/
 chmod -R 775 /var/www/html/storage/
 chown -R www-data:www-data /var/www/html/storage/
 
-cd /var/www/html && composer install && php artisan migrate
+cd /var/www/html && composer install && php artisan migrate && chown -R www-data:www-data ./storage/
