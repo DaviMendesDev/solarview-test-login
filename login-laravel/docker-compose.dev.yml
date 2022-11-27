@@ -18,6 +18,9 @@ services:
       - NGINX_PORT=80
     networks:
       - solarview_login_default_network
+    depends_on:
+      - mysql
+      - redis
 
   mysql:
     container_name: solarview-login-mysql
